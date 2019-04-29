@@ -1,0 +1,171 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="ion-content" (ionScrollStart)="logScrollStart()" (ionScroll)="logScrolling($event)" (ionScrollEnd)="logScrollEnd()">
+  <ion-button [routerLink]="['/news']">
+    跳转新闻
+  </ion-button>
+  <ion-badge color="warning" >42</ion-badge>  
+  <ion-badge color="secondary">1</ion-badge>
+  <ion-badge color="tertiary">2</ion-badge>
+  <ion-badge color="success">3</ion-badge>
+  <ion-badge color="warning">4</ion-badge>
+  <ion-badge color="danger">5</ion-badge>
+  <ion-badge color="light">6</ion-badge>
+  <ion-badge color="medium">7</ion-badge>
+  <ion-badge color="dark">8</ion-badge>
+
+  <!-- 引入moudle -->
+  <app-user></app-user>
+
+  <div>
+    <ion-button fill='outline' expand='full'> button expand 按钮宽度</ion-button>
+
+    <ion-button color="primary" href="">primary</ion-button>
+
+    <ion-button color="primary"  aria-expanded="full"> full</ion-button>
+    <ion-button color="primary" href="">
+      <ion-icon name="add-circle-outline" slot="start">带左图标的</ion-icon>
+    </ion-button>
+
+    <ion-button color="primary" >
+      <ion-icon name="add" slot="icon-only">add</ion-icon>
+    </ion-button>
+    <ion-button color="primary" fill="clear">
+      <ion-icon name="add-circle-outline" slot="icon-only">add</ion-icon>
+    </ion-button>
+
+    <!-- expand: Full-width button   block / full -->
+    <!-- color="success"  primary secondary tertiary success warning danger light medium dark-->
+    <ion-button expand="full"> expand:full </ion-button>
+    <ion-button expand="block"> expand:block </ion-button>
+
+    <ion-button fill="clear"> fill:clear </ion-button>
+    <ion-button fill="outline"> fill:outline </ion-button>
+    <ion-button fill="solid"> fill:solid </ion-button>
+
+    <ion-button size="small"> size:small </ion-button>
+    <ion-button size="default" color="dark"> size:default </ion-button>
+    <ion-button size="large"  color="success" > size:large </ion-button>
+
+    <ion-button>
+      <ion-icon slot="start" name="star"></ion-icon>
+      Left Icon
+    </ion-button>
+    <ion-button>
+      Right Icon
+      <ion-icon slot="end" name="star"></ion-icon>
+    </ion-button>
+    <ion-button>
+      <ion-icon slot="icon-only" name="star"></ion-icon>
+    </ion-button>
+    
+    <!-- 圆角  disabled可用-->
+    <ion-button shape="round" disabled="false">Round Button</ion-button>
+    <ion-button shape="round" disabled="true">Round Button</ion-button>
+
+    <!-- type -->
+    <ion-button type="button" >Button type</ion-button>
+    <ion-button type="reset" >Button type</ion-button>
+    <ion-button type="submit" >Button type</ion-button>
+  </div>
+
+  <ion-button (click)="actionSheet()">
+    ion-action-sheet
+  </ion-button>
+
+  <ion-button (click)="showAlter()">
+    showAlter
+  </ion-button>
+
+  <ion-list>
+    <ion-card>
+      <p>ion-card 的介绍</p> 
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>ion-card-header subtitle</ion-card-subtitle>
+        <ion-card-title>ion-card-header Title</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        我是ion-card-content
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>ion-card-header Title</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        我是ion-card-content
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-item>
+        <ion-icon name="pin" slot="start"></ion-icon>
+        <ion-label>ion-item</ion-label>
+        <ion-button fill="outline" slot="end">button</ion-button>
+      </ion-item>
+    </ion-card>
+
+  
+    <ion-card>
+      <ion-item>
+        <ion-label>Awesome Label</ion-label>
+      </ion-item>
+      <ion-item href="#" class="activated">
+        <ion-icon name="wifi" slot="start"></ion-icon>
+        <ion-label>Card Link Item 1 .activated</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="wine" slot="start"></ion-icon>
+        <ion-label>Item Avatar</ion-label>
+      </ion-item>
+      <ion-item class="activated">
+        <ion-icon name="warning" slot="start"></ion-icon>
+        <ion-label>Item activated  warning</ion-label>
+      </ion-item>
+      <ion-item href="#">
+        <ion-icon name="warning" slot="start"></ion-icon>
+        <ion-label>Item  warning</ion-label>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+
+  <ion-list>
+    <ion-item *ngFor="let entry of form">
+      <ion-label>{{entry.val}}</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-chip>
+    <ion-icon name="pin" color="primary"></ion-icon>
+    <ion-label>Icon </ion-label>
+    <ion-icon name="close"></ion-icon>
+  </ion-chip>
+    
+  <ion-chip>
+    <ion-avatar>
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>    
+    <ion-label>Icon </ion-label>
+    <ion-icon name="close-circle"></ion-icon>
+  </ion-chip>
+
+  
+</ion-content>
+
+
+
